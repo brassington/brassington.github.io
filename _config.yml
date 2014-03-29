@@ -18,10 +18,11 @@ url:              http://jabbrass.github.io/
 # Owner/author information
 owner:
   name:           Jacob Andrew Brassington
-  avatar:         hmfaysal.jpg
-  email:          hmfaysal@alum.mit.edu
+  avatar:         Jacob_Brassington.png
+  email:          jabbrass@zoho.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Hossain Mohammad Faysal is an Electrical Engineer and a Mathematician based in Doha, Qatar. His interests are anything that&#8217;s related to math, from math itself to programming languages to music to physics to engineering to philosophy.
+  description:    Jacob Andrew Brassington lives in the North Bay area, but works a Web Developer and full time Instructor at Coder Camps in Houston, TX. In between flights to and from CA to see his lovely new bride, he loves working on projects in JavaScript, ASP.NET, and Angular.js. 
+Jacob loves to play the tuba, bake fresh pies, and visit with AirBnB guests from anywhere! Come visit me in Healdsburg, CA.
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        jabbrass
