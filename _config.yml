@@ -1,7 +1,7 @@
 title:            J. Andrew Brassington
 description:      "Ramblings of a novice programming instructor"
 logo:             codercampsBnW.png
-disqus_shortname: jabbrass
+disqus_shortname: brassingon
 # Assign a default image for your site's header and footer
 default_bg:       newoffice.jpg
 search:           true
@@ -21,7 +21,7 @@ owner:
   avatar:         Jacob_Brassington.png
   email:          jabbrass@zoho.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Jacob Andrew Brassington lives in the North Bay area, but works a Web Developer and full time Instructor at Coder Camps in Houston, TX. In between flights to and from CA to see his lovely new bride, he loves working on projects in JavaScript, ASP.NET, and Angular.js. Jacob loves to play the tuba, bake fresh pies, and visit with AirBnB guests from anywhere! Come visit me in Healdsburg, CA.
+  description:    Jacob Andrew Brassington lives in the North Bay area, but works a Web Developer and full time Instructor at Coder Camps in Houston, TX. &#xD <br /> In between flights to and from CA to see his lovely new bride, he loves working on projects in JavaScript, ASP.NET, and Angular.js. &#xD <br /> Jacob loves to play the tuba, bake fresh pies, and visit with AirBnB guests from anywhere! Come visit me in Healdsburg, CA.
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        jabbrass
