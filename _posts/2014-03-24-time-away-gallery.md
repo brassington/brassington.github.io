@@ -14,7 +14,7 @@ It is critical to take time away from work. Time to relax and regroup. I can get
 
 <figure class="third">
 	<a href="{{ site.url }}/images/gallery1/A&R-hay-pic.jpg"><img src="{{ site.url }}/images/gallery1/A&R-hay-pic.jpg"></a>
-	<a href="{{ site.url }}/images/gallery1/A&R-love-seat.jpg"><img src="{{ site.url }}/images/gallery1/A&R-love-seat.jpg"></a>
+	<a href="{{ site.url }}/images/gallery1/A-R-love-seat.jpg"><img src="{{ site.url }}/images/gallery1/A-R-love-seat.jpg"></a>
 	<a href="{{ site.url }}/images/gallery1/A&R-hay-kiss.jpg"><img src="{{ site.url }}/images/gallery1/A&R-hay-kiss.jpg"></a>
 </figure>
 <figure class="half">
