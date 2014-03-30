@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /jacob-andrew-brassington/index.html
+permalink: /about/index.html
 title: Jacob Andrew Brassington
 tags: [Jacob, Andrew, Brassington, jabbrass]
 image:
