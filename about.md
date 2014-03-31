@@ -4,7 +4,7 @@ permalink: /about/index.html
 title: Jacob Andrew Brassington
 tags: [Jacob, Andrew, Brassington, jabbrass]
 image:
-  feature: Hossain-Mohd-Faysal.jpg
+  feature: brassington-teaching.jpg
 ---
 
 >&quot;I find hope in the darkest of days, and focus in the brightest. I do not judge the universe.&quot;
