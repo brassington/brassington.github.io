@@ -35,9 +35,9 @@ I worked on this project for almost 2 years at Andrews University. It's still on
 
 <figure class="third">
 	<a href="{{ site.url }}/images/portfolio/frontpage.png"><img src="{{ site.url }}/images/portfolio/frontpage.png"></a>
-	<a href="{{ site.url }}/images/portfolio/CastSearch.png"><img src="{{ site.url }}/images/portfolio/CastSearch.PNG"></a>
+	<a href="{{ site.url }}/images/portfolio/CastSearch.png"><img src="{{ site.url }}/images/portfolio/CastSearch.png"></a>
 	<a href="{{ site.url }}/images/portfolio/profile.png"><img src="{{ site.url }}/images/portfolio/profile.png"></a>
-	<a href="{{ site.url }}/images/portfolio/LoggedIn.png"><img src="{{ site.url }}/images/portfolio/LoggedIn.PNG"></a>
+	<a href="{{ site.url }}/images/portfolio/LoggedIn.png"><img src="{{ site.url }}/images/portfolio/LoggedIn.png"></a>
 	<a href="{{ site.url }}/images/portfolio/videoplayer.png"><img src="{{ site.url }}/images/portfolio/videoplayer.png"></a>
 	<a href="{{ site.url }}/images/portfolio/studentmovement.png"><img src="{{ site.url }}/images/portfolio/studentmovement.png"></a>
 	<figcaption>Private student portfolios, newspaper articles, videos loaded in custom player, complete backend for management, versioning, and a complete online publishing workflow</figcaption>
