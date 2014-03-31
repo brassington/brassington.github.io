@@ -2,27 +2,100 @@
 layout: page
 permalink: /about/index.html
 title: Jacob Andrew Brassington
-tags: [Jacob, Andrew, Brassington, jabbrass]
+tags: [Jacob, Andrew, Brassington, jabbrass, Resume]
 image:
   feature: brassington-teaching.jpg
 ---
+ * <andrew@brassington.io>
+ * <http://brassington.io>
+ * 360-610-7048
 
->&quot;I find hope in the darkest of days, and focus in the brightest. I do not judge the universe.&quot;
-><small><cite title="Dalai Lama">Dalai Lama</cite></small>
+## Background
 
-HMFAYSAL OMEGA is a minimalist, beautiful, responsive theme for Jekyll designed for engineers as well as writers who want their content to take front and center. This theme elegantly wraps each page and post with featured images complementing the content. It was built -- by Engineer slash Mathematician [Hossain Mohd Faysal](http://alum.mit.edu/www/hmfaysal/).
+I am a software developer with experience using C#, ASP.NET, Javascript, and Angular.js. I enjoy experimenting with new tools/languages to expand my knowledge and I believe that teaching others to share in a love for learning is the most important aspect of any profession, but especially as a developer.
 
-**Hossain Mohd. Faysal** is an MSc + PhD candidate in *Electrical Engineering* at the [School of Engineering and Applied Science](http://www.seas.upenn.edu/) at **University of Pennsylvania**. He is licensed as a Professional Engineer (P.E) to practice in the states of Texas, Massachusetts and California. Faysal graduated with a double-major in EECS and Mathematics during his undergraduate life, and currently focusing on Solid State Electronics for his post-graduate studies.
+I strive to be a quick learner and both a competent leader and capable worker. In my free time I enjoy cycling, playing the tuba, hiking, reading, and spending time with my wife. I'd like to contribute more to open source projects.
 
-At some point in the not-terribly-distant future, Faysal hopes to found a self-sustaining collective of clever people, for fun, profit(?), and the promotion of human life in the universe. This might wind up in Qatar, Bangladesh, Scandinavia, the Massachusetts Bay Area, the SF Bay Area, Japan, Germany, or the dustbin of overly idealistic plans. (Yes, Faysal has a special bin for overly idealistic plans. In my district they can't be recycled with residential mixed paper.) The most challenging aspect of this concept is to curtail unproductive competition with other people who will inevitably have the same idea. (Some sort of cooperative federation...) He is presently looking for people who might be interested in being a part of such an organization.
+## Education
 
-Anyways, for now Faysal is just working toward changing the face of Electrical Engineering forever. Not that he necessarily expect to succeed, but it's something to strive for, and it's a fun problem to work on.
+Business Administration, B.S.  
+Fall 2006 - Spring 2013  
+Andrews University, Berrien Springs, Michigan  
 
-This website was built with Jekyll and features the HMFAYSAL OMEGA Theme, the coolest theme for Jekyll. 
-<br>
-<br>
+## Proficiency
 
-<div class="span7 text-center" markdown="0">
-<a markdown="0" href="{{ site.url }}/documentation/" class="btn btn-danger btn-large"><i class="icon-book"></i> Theme Documentation</a> <a markdown="0" href="http://alum.mit.edu/www/hmfaysal" class="btn btn-success btn-large"><i class="icon-edit"></i> HMFaysal's blog</a> <a markdown="0" href="http://social.hmfaysal.tk" class="btn btn-info btn-large"><i class="icon-bullseye"></i> HMFAYSAL Social</a></div> 
-<br>
-<br>
+I have been writing basic HTML/CSS, running linux servers and experimenting with new software since middle school in 2002. Most recently the majority of code I have written has been in C#, ASP.NET, Javascript, and Angular.js. I have limited experience in Ruby, Python, Bash, and SQL.
+
+## Experience
+
+*** ***
+
+### Coder For Rent LLC, Houston, TX
+
+#### .Net Developer / Instructor at Coder Camps - October 2013 to Present
+
+Taught students 8-10 hours/day. Overhauled curriculum to emphasize javascript. Helped add bootstrap to CoderCamps.com.
+
+*** ***
+
+### Coder Camps, Houston, TX
+
+#### Student - August 2013 to September 2013
+
+Intensive 9-week .NET developer training where I practiced building solutions in a team using C#, CSS3, HTML5, Javascript, SQL, MVC4, XAML, LINQ, and Entity Framework.
+
+*** ***
+
+### Andrews University, Berrien Springs, MI
+
+#### Student Association Vice President - May 2012 to May 2013
+
+I was lead developer on our Student Association website called the [CAST](http://www.andrews.edu/ausacast/):
+ 
+ 
+ * Private profiles only available to Andrews University students (away from Google's index)
+ * Maintained local university Ubuntu host virtual machines
+ * Integrated with the University login directory using LDAP
+ * Built our own faceted search using Apache's Solr search
+ 
+ 
+ I also lead the student senate, ran elections, and graduated with honors in leadership that same year.
+
+*** ***
+
+### Ekamai International School, Bangkok, Thailand
+
+#### Fourth Grade Teacher / Student Missionary - August 2010 to June 2011
+
+Inspired 80 students daily to live Christian values. On the side I taught English, History, and Geography. 
+
+*** ***
+
+### QualitySmith, Walla Walla, WA
+
+#### Project Sales Consultant - Summer 2009
+
+Acted as an efficient, goal-oriented company representative to hundreds of customers and home improvement contractors each month over the phone
+
+*** ***
+
+### House Legislature, Olympia, WA
+
+#### Legislative Policy Intern - January 2008 to March 2008
+
+ * Conducted legislative research
+ * Kept legislator updated by tracking their bills through the legislative process. 
+ * Took notes at committee hearings, meetings and legislative sessions.
+ *  Contributed to general office duties by drafting return correspondence with constituents.
+ 
+*** ***
+ 
+ 
+## Recommendations
+
+>"Andrew has been a great asset to our team from day one. He's smart, trustworthy, and takes initiative. If you need a smart guy that gets the job done, Andrew will be an asset to your team." **~David Graham**, *CEO, Coder For Rent, LLC*
+
+>"I have been lucky enough to have had Andrew as both an instructor and a co-worker. He is extremely conscientious, detail oriented, and well prepared. Andrew has the rare ability to learn something and almost immediately apply/teach it.
+He is continually expanding his development skill set and passing that knowledge on to those around him. Working with Andrew has has made me a stronger, more effective developer." **~Alex Miller**, *Co-instructor*
+
+>"Jacob's eye for detail is unmatched as is his professionalism. He is very comfortable in any kind of environment and is my idea of an ideal colleague. His breadth of knowledge is incredibly vast which directly relates to his ability to solve problems and think outside of the box." **~Amijot (Amu) Sohal**, *Fellow Student*
