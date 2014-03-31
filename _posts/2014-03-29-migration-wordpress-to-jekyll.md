@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Wordpress to Jekyll: Done"
+title: "Wordpress to Jekyll: Almost Done"
 description: This weekend I migrated my blog to simple, minimal, and sleek Jekyll
 headline: 
 category: Blog-Maintenence
@@ -21,3 +21,5 @@ The tricky part was choosing what theme to use and how to develop locally withou
 Then use jekyll serve --baseurl '' when generating your site locally. It keeps you from needing to change the config every time you swich between developing online / on your own machine.
 
 I'll let you know as I go if I have any other issues, but so far Jekyll's been simple, and a delight to work with. I highly recommend it.
+
+Now I just need to finish adding my old posts.
