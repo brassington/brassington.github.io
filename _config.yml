@@ -12,10 +12,17 @@ readtime:         true
 animated_fins:	  true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
+<<<<<<< HEAD
 # Change baseurl to your domain. Leave localhost server or blank when working locally,
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
 baseurl:          /jabbrass.github.io
+=======
+# Change url to your domain. Leave localhost server or blank when working locally.
+# or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
+# whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
+baseurl:          /hmfaysal-omega-theme
+>>>>>>> upstream/gh-pages
 
 # Owner/author information
 owner:
