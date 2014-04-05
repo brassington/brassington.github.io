@@ -19,27 +19,28 @@ baseurl:          /jabbrass.github.io
 
 # Owner/author information
 owner:
-  name:           Jacob Andrew Brassington
-  avatar:         Jacob_Brassington.png
-  email:          jabbrass@zoho.com
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Jacob Andrew Brassington lives in the North Bay area, but works a Web Developer and full time Instructor at Coder Camps in Houston, TX. &#xD <br /> In between flights to and from CA to see his lovely new bride, he loves working on projects in JavaScript, ASP.NET, and Angular.js. &#xD <br /> Jacob loves to play the tuba, bake fresh pies, and visit with AirBnB guests from anywhere! Come visit me in Healdsburg, CA.
-  # Social networking links used in footer. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
-  twitter:        jabbrass
-  facebook:       
-  github:         jabbrass
-  stackexchange:  
-  linkedin:       jacobandrewbrassington
-  instagram:      
-  flickr:         
-  tumblr:         
-  hmfaysalsocial:
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:    
+name:           Jacob Andrew Brassington
+avatar:         Jacob_Brassington.png
+email:          jabbrass@zoho.com
+# Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
+description:    Jacob Andrew Brassington lives in the North Bay area, but works as Web Developer and full time Instructor at Coder Camps in Houston, TX. &#xD <br /> In between flights to and from CA to see his lovely new bride, he loves working on projects in JavaScript, ASP.NET, and Angular.js. &#xD <br /> Jacob loves to play the tuba, bake fresh pies, and visit with AirBnB guests from anywhere! Come visit me in Healdsburg, CA.
+# Social networking links used in footer. Update and remove as you like.
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   UA-39365944-7
+# To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
+twitter:        jabbrass
+facebook:       
+github:         jabbrass
+stackexchange:  
+linkedin:       jacobandrewbrassington
+instagram:      
+flickr:         
+tumblr:         
+hmfaysalsocial:
+# For Google Authorship https://plus.google.com/authorship
+google_plus:    
+
+# Analytics and webmaster tools stuff goes here : UA-39365944-7
+google_analytics:   
 google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
