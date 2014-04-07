@@ -42,3 +42,12 @@ I worked on this project for almost 2 years at Andrews University. It's still on
 	<a href="{{ site.url }}/images/portfolio/studentmovement.png"><img src="{{ site.url }}/images/portfolio/studentmovement.png"></a>
 	<figcaption>Private student portfolios, newspaper articles, videos loaded in custom player, complete backend for management, versioning, and a complete online publishing workflow</figcaption>
 </figure>
+
+## AdventistHealthExpo.com
+
+As a volunteer teacher in Thailand, I also volunteered to work on a website for a religous organization holding health fairs in Bangkok, Thailand. This was a multilingual site in Thai and English. 
+
+<figure>
+	<a href="{{ site.url }}/images/portfolio/adventistHealthExpoMultiLingual.png"><img src="{{ site.url }}/images/portfolio/adventistHealthExpoMultiLingual.png"></a>
+	<figcaption><a href="http://hmfaysal.github.io/" data-toggle="tooltip" title="Visit my website">Multilingual site designed and themed for Drupal 7</a>.</figcaption>
+</figure>
