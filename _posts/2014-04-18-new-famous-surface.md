@@ -58,7 +58,7 @@ Now you must set all the options you'll need to take in as arguments from anyone
 
 {% endhighlight %}
 
-In the TextareaSurface function, I've defined the list of default values if someone doesn't define use an arguement. This is an important practice, and though I've left them all blank, it would be easy to come back and set some other values as default.
+In the TextareaSurface function, I've defined the list of default values if someone doesn't define use an argument. This is an important practice, and though I've left them all blank, it would be easy to come back and set some other values as default.
 
 Next, use Object.create() to specify the core Surface object that you want to link as the prototype. This will help to extend the Surface object, allowing it to be more useful by giving Javascript another object to examine for similar properties and methods. We are creating a specialized surface after all:
 {% highlight javascript %}
@@ -71,7 +71,7 @@ Next, use Object.create() to specify the core Surface object that you want to li
 
 Now, if someone doesn't send in an entire object to create our new kind of Surface, we want to include chainable extension methods that make it possible to easily modify the surface once it's been created in memory. This is what the majority of the file's contents: methods which will set values in place of the defaults defined at the top of the file.
 
-Again, it's wise to document the usage of the extension method and whether it triggers a repaint or not. In this case, the method can be overrident by another property, the size property, so I've noted as much and included an example:
+Again, it's wise to document the usage of the extension method and whether it triggers a repaint or not. In this case, the method can be overridden by another property, the size property, so I've noted as much and included an example:
 {% highlight javascript %}
     /**
      * Set the number of columns visible in the textarea.
