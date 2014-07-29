@@ -115,3 +115,112 @@ The last line exports the new surface as a new module for Require.js to use, and
 
 You will really learn a ton by jumping into the code and figuring Famous out, reading it line by line. I certainly have learned plenty. I've posted this new surface in a forked version of the main Famous/Surface repository here: [TextareaSurface.js](https://github.com/jabbrass/surfaces/blob/d9d6838ba34f2012d632eac619d009d80aa329c5/TextareaSurface.js).
 Feel free to check it out and play with it for yourself!
+
+<html>
+<body>
+<script src="../lib/underscore/underscore.js"></script>
+
+  <script>
+    var stacksFunc = [];
+    var stacksfuncShared = [];
+    var stacksProto = [];
+    var stacksPseudo = [];
+
+    var makeStackA = function(){
+      var someInstance = {};
+
+
+  var storage = {};
+  var size = 0;
+
+  someInstance.push = function(value){
+    storage[size] = value;
+    size++;
+  };
+
+  someInstance.pop = function(){
+    if (size > 0) {
+      size--;
+      var temp = storage[size];
+      delete storage[size];
+      return temp;
+    }
+  };
+
+  someInstance.size = function(){
+    return size;
+  };
+
+  return someInstance;
+};
+
+var makeStackB = function() {
+  var result = {};
+  _.extend(result, stackMethods, {'storage' : {'size' : 0}});
+  return result;
+};
+
+var stackMethods = {
+  'push' : function(value){
+    var storage = this.storage;
+    storage[storage.size] = value;
+    storage.size++;
+  },
+  'pop' : function(){
+    var storage = this.storage;
+    if (storage.size > 0) {
+      storage.size--;
+      var temp = storage[storage.size];
+      delete storage[storage.size];
+      return temp;
+    }
+  },
+  'size' : function(){
+    return this.storage.size;
+  }
+};
+
+var makeStackC = function() {
+  var result = Object.create(stackMethods);
+  result.storage = {'size':0};
+  return result;
+};
+
+var Stack = function() {
+  this.storage = {size: 0};
+};
+
+Stack.prototype.push = function(value){
+  var storage = this.storage;
+  storage[storage.size] = value;
+  storage.size++;
+};
+
+Stack.prototype.pop = function(){
+  var storage = this.storage;
+  if (storage.size > 0) {
+    storage.size--;
+    var temp = storage[storage.size];
+    delete storage[storage.size];
+    return temp;
+  }
+};
+
+Stack.prototype.size = function(){
+  return this.storage.size;
+};
+
+
+for (var i = 0; i < 100000; i++) {
+  stacksFunc[i] = makeStackA();
+  stacksfuncShared[i] = makeStackB();
+  stacksProto[i] = makeStackC();
+  stacksPseudo[i] = new Stack();
+}
+
+
+
+
+</script>
+</body>
+</html>
