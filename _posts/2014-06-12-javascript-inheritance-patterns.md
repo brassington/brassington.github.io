@@ -65,6 +65,8 @@ var makeRestaurant = function(address) {
 var open = function() {
   this.isOpen = true;
 }
+{% endraw %}
+{% endhighlight %}
 
 The above is not best practice. It creates another global scope variable, and could potentially add many additional functions unattached to the restaurant class which is associated.
 
