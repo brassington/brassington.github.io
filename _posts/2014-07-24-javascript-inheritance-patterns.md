@@ -26,12 +26,16 @@ The instance of the class is the object that was manufactured by that class: the
 {% raw %}
 var makeRestaurant = function(address) {
   var instanceObj = {};
+
   instanceObj.address = address;
   instanceObj.isOpen = false;
   instanceObj.cashRegisters = 2;
+
   instanceObj.open = function() {
     this.isOpen = true;
   }
+
+  return instanceObj;
 }
 
 var Subway = makeRestaurant('900 Mission St.');
@@ -40,7 +44,28 @@ console.log(Subway.doors)  //-> true
 {% endraw %}
 {% endhighlight %}
 
-Now you must set all the options you'll need to take in as arguments from anyone who want to reuse your surface. It's also not a bad idea to add documentation taking particular note to explain how each of your parameter's should be used.
+This is a class in its simplest form. It creates objects, as many as desired. One problem with this method is that each function attached to the object needs it's own memory. We can optimize this slightly by defining a function outside the maker-function, and adding a reference on the class to the other named function. This way, we only have a reference to the single function defined in one place and occupying a place in memory once:
+
+{% highlight javascript %}
+{% raw %}
+var makeRestaurant = function(address) {
+  var instanceObj = {};
+
+  instanceObj.address = address;
+  instanceObj.isOpen = false;
+  instanceObj.cashRegisters = 2;
+  
+  instanceObj.open = open; // <- This is the reference to the open function defined below.
+
+  return instanceObj;
+}
+
+var open = function() {
+  this.isOpen = true;
+}
+
+{% endraw %}
+{% endhighlight %}
 
 {% highlight javascript %}
     /**
