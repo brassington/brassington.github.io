@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Creating a Famo.us Textarea Surface
+title: A Tour of Inheritance Patterns in Javascript
 description: 
 category: Famous
-tags: [Famous, Code, Javascript, Github]
+tags: [Code, Javascript]
 image:
   feature: 
 comments: true
 share: true
 ---
 
-Famo.us is all Javascript, and it uniquely places all DOM elements in a flat structure using absolute positioning to manage where the elements should show on the page. For every html element you need to display, you need a surface to render it. Now you can add as many elements to the content portion of a surface, but if you want it to independently interact with other surfaces using custom methods, you may need to write your own surface.
+I have encountered many people who believe that because Javascript has lacked a true blueprint-creating, property-copying class primitive, that it is underpowered in the inheritance department. This is simply untrue. Flexibility is the name of the game in JS. It gives you not one or two ways to share methods and properties, but four!
 
-I'd been lurking on the Famo.us IRC channel, and happened to catch another developer who was having problems creating a text area in Famous. There was no surface that would create a textarea element, and so I took it upon myself to figure out how difficult it would be to create one. It turns out, it wasn't that hard at all. 
+Each of these patterns really boil down to a matter of preference, but many developers/work-places choose one of these patterns to standardize their workflows. The most common choice, and most confusing because of its last-minute-addition-to-the-language status is pseudoclassical style which employes the `new` keyword.
 
-### Creating a Custom Surface
+### Functional Classing
 
 First, you'll need to initialize your new surface by using define from require.js to bring in the core surface object you'll be extending to create your own surface.
 
@@ -116,6 +116,7 @@ The last line exports the new surface as a new module for Require.js to use, and
 You will really learn a ton by jumping into the code and figuring Famous out, reading it line by line. I certainly have learned plenty. I've posted this new surface in a forked version of the main Famous/Surface repository here: [TextareaSurface.js](https://github.com/jabbrass/surfaces/blob/d9d6838ba34f2012d632eac619d009d80aa329c5/TextareaSurface.js).
 Feel free to check it out and play with it for yourself!
 
+{% highlight javascript %}
 <html>
 <body>
 <script src="../lib/underscore/underscore.js"></script>
@@ -224,3 +225,4 @@ for (var i = 0; i < 100000; i++) {
 </script>
 </body>
 </html>
+{% endhighlight %}
