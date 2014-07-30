@@ -2,7 +2,7 @@
 layout: post
 title: A Tour of Inheritance Patterns in Javascript
 description: 
-category: Famous
+category: Javascript Classes
 tags: [Code, Javascript]
 image:
   feature: 
@@ -12,16 +12,31 @@ share: true
 
 I have encountered many people who believe that because Javascript has lacked a true blueprint-creating, property-copying class primitive, that it is underpowered in the inheritance department. This is simply untrue. Flexibility is the name of the game in JS. It gives you not one or two ways to share methods and properties, but four!
 
-Each of these patterns really boil down to a matter of preference, but many developers/work-places choose one of these patterns to standardize their workflows. The most common choice, and most confusing because of its last-minute-addition-to-the-language status is pseudoclassical style which employes the `new` keyword.
+Each of these patterns really boil down to a matter of preference, but many developers/work-places choose one of these patterns to standardize their workflows. The most common choice, and most confusing because of its last-minute-addition-to-the-language status is pseudoclassical style which employes the `new` keyword. This is also the most complext of the four, many times considered the only real way to class in JavaScript.
 
-### Functional Classing
+### Functional Classes
 
-First, you'll need to initialize your new surface by using define from require.js to bring in the core surface object you'll be extending to create your own surface.
+First, it's easy to confuse a function in JS that adds properties to an existing object (sometimes called a decorator), with a functional class that builds the object that it's adding properties to. Function's can create an object first, then add properties and return that new object, making it easy to create many objects over and over by invoking the function.
+
+I like to call these maker-functions or factories. They are functions which pump out objects with similar properties using the same interface. Many developers capitalize their class names like a proper noun.
+
+The instance of the class is the object that was manufactured by that class: the resulting object, and creating an object using a class is often referred to as instantiating.
 
 {% highlight javascript %}
 {% raw %}
-define(function(require, exports, module) {
-    var Surface = require('famous/core/Surface');
+var makeRestaurant = function(address) {
+  var instanceObj = {};
+  instanceObj.address = address;
+  instanceObj.isOpen = false;
+  instanceObj.cashRegisters = 2;
+  instanceObj.open = function() {
+    this.isOpen = true;
+  }
+}
+
+var Subway = makeRestaurant('900 Mission St.');
+Subway.open();
+console.log(Subway.doors)  //-> true
 {% endraw %}
 {% endhighlight %}
 
