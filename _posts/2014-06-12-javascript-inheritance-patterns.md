@@ -1,7 +1,7 @@
 ---
 layout: post
-title: A Tour of Inheritance Patterns in Javascript: Part 1
-description: Find out how to use the functional class pattern in JS
+title: 'A Tour of Inheritance Patterns in Javascript: Part 1'
+description: 'Find out how to use the functional class pattern in JS'
 category: Javascript Classes
 tags: [Code, Javascript]
 image:
