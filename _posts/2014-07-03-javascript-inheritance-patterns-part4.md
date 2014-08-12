@@ -46,7 +46,6 @@ var subway = Restaurant('878 Main St.');
 We've written a lot of code here. It would be nice to have a shorter, more terse syntax for expressing what we've written. If our javascript interpreter inserted a few lines for us, we could type less. We could remove the 'var instanceObj = Object.create(Restaurant.methods)' and the 'return instanceObj', because those will be repeated everytime we create a class. But we still need these lines to be done, so the authors of JS decided that they would auto-insert those lines for us.
 
 {% highlight javascript %}
-{% raw %}
 var Restaurant = function(address) {
   //var instanceObj = Object.create(Restaurant.prototype);
   // Now removed and replaced with this invisible line inserted at run-time (new keyword)
@@ -71,7 +70,6 @@ Restaurant.prototype = {
 }
 
 var subway = new Restaurant('878 Main St.'); // Added new keyword to do the auto-insertion
-{% endraw %}
 {% endhighlight %}
 
 We saved a few lines of typing, and invoked the Restaurant function with the `new` keyword. As you may have already guessed, the `new` keyword is the culprit responsible for auto-inserting lines on particular functions. The surprising part of this syntax, is that you can use the `new` keyword infront of any function invocation; it will not stop you. This means you need to be extremely careful that you only use the `new` keyword when you need those two lines auto-inserted.
