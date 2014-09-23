@@ -25,7 +25,7 @@ Wercker uses Docker to accomplish some wonderful things. It's all backed by Gith
 
 ### Werker Boxes and Steps
 
-<img src="http://f.cl.ly/items/0x2f0q301u3q2J353t32/wercker_pipeline_box.png"></img>
+<img src="http://f.cl.ly/items/0x2f0q301u3q2J353t32/wercker_pipeline_box.png" />
 
 Wercker separates test environments into two parts: the environment, and the commands you need to run on that environment to run your test suite. You just need to create a wercker.yml file in the repository you want to test, and then create a new application by following the prompts in Wercker.com's interface. It connects to your Github account and the repository you want to be tested, and finds the wercker.yml configuration file.
 
