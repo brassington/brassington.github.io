@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Brendan Eich on History of JS"
+title: "Eich on the History of JS"
 description: "Epic history and future of JS from its creator: Brendan Eich."
 category: Javascript
 tags: [JavaScript, History, Future]
