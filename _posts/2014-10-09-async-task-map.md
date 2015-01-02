@@ -9,7 +9,7 @@ image:
 comments: true
 share: true
 ---
-Playing with JavaScript is often on of the best ways to learn. Just pop open that console in your browser and start playing!
+Playing with JavaScript is often one of the best ways to learn. Just pop open that console in your browser and start playing!
 
 One problem that I really enjoyed solving was one where I needed to keep track of list of functions, invoke them all, and modify their results. I call this an asyncronous task mapping function.
 The tricky part is waiting until each of the functions has resolved before modifything the results.
