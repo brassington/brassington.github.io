@@ -1,0 +1,91 @@
+---
+layout: post
+title: 'Use ES6/AMD/CommonJS Modules Syntax Together with SystemJS!'
+description: 'A practical way to start using ES6 modules with AMD or CommonJS syntax'
+category: Javascript
+tags: [Code]
+image:
+  feature: 
+comments: true
+share: true
+---
+ES6 is coming! And I've been having a blast playing with some it's new features. One that I'm most excited about is Proxies, but I'll get into those in a later post. For today, I want to discuss the module loading features that are available using a library called SystemJS, which allows you to use ES6 modules, as well as Require/AMD and CommonJS syntax. It's simple to set up, and I have an example repository that I'll walk you through to get started.
+
+First, take a look at the SystemJS repository here: [SystemJS](https://github.com/systemjs/systemjs).
+Then, if you want to skip my explanation and jump straight to my example repo, you can find it here: [SystemJS Example](https://github.com/jabbrass/systemjs-example)
+
+At work, I work on a big data analysis tool. I needed to make a decision on which module syntax to use, and different members of my team preferred AMD, while I preferred the more node-style CommonJS, while still being aware that native modules were coming. This is a great way to meet everyone's needs, as it automatically recognizes each of the different patterns and loads each style module correctly.
+
+First, the important files are in the js/ directory, they are the index.js, and require-config.js.
+But, first, if you're going to use my example repo, it uses bower for the dependancies, so install NPM, Bower, and do a `bower install` in the project directory.
+
+index.js:
+{% highlight javascript %}
+require('css/index.css!');
+require('lib/jquery.selectBoxIt/src/stylesheets/jquery.selectBoxIt.css!');
+require('css/lib/plugins/chosen.css!');
+require('css/lib/plugins/jquery.datetimepicker.css!');
+require('css/lib/jquery-ui.min.css!');
+require('css/lib/nv.d3.css!');
+require('css/lib/bootstrap.min.css!');
+require('css/lib/bootstrap-multiselect.css!');
+
+var $ = require('jquery');
+require('jqueryUI');
+require('lib/chosen/chosen.jquery.min');
+require('lib/datetimepicker/jquery.datetimepicker');
+require('lib/moment/moment');
+require('lib/bootstrap-multiselect/dist/js/bootstrap-multiselect');
+require('icheck');
+require('selectboxit');
+require('bootstrap');
+
+console.log('Jquery loaded?:',!!$.map);
+{% highlight javascript %}
+
+If all goes well, when this index.js file is loaded by the module loader, we will have a Jquery function console logging as available from the file.
+Because my coworkers were comfortable with Require syntax already, I decided to create a quick configuration file that could be loaded from each page and provide some of the same conveniences of Require, but you don't have to do this. This shows off some of the great features that SystemJS adds in addition to ES6 module syntax.
+I've commented the lines which are most interesting, but the paths object is handy for defining shortcut reference paths. Using Bower, this is extremely convenient, because it downloads the whole library repo often, you can sort through and find the actual js file you want to load, and then create a string that will refer to the path, which can be used instead of the full path every time you want to load the dependancy.
+
+js/require-config.js:
+{% raw %}
+// Creates Require configuration for System, a multi-style module loader
+// Add shortcuts to libraries by defining them in paths
+System.config({
+// set all requires to "lib" for library code
+baseURL: '/',
+// set "app" as an exception for our application code
+paths: {
+  'bootstrap': 'lib/bootstrap/dist/js/bootstrap.min.js',
+  'jquery': 'lib/jquery/dist/jquery.min.js',
+  'selectboxit': 'lib/jquery.selectBoxIt/src/javascripts/jquery.selectBoxIt.js',
+  'daterangepicker': 'lib/bootstrap-daterangepicker/daterangepicker.js'
+  }
+});
+System.map['css'] = 'css';
+System.meta['bootstrap-slider'] = { deps: ['jquery'] };
+// Look for data-main on a script tag to load as here: requirejs.org/docs/api.html#jsfiles
+if ((mainjs = document.querySelector('[data-main]').getAttribute('data-main'))) {
+  System.import(mainjs.replace('.js', ''));
+}
+// Use System.import to bring in javascript files needed on every page
+//System.import('css/menu.js');
+//System.import('css/menu.css!');
+{% endraw %}
+{% endhighlight %}
+
+The bottom few lines allow you to have the convenience of defining a main javascript file that will get loaded along with the html file. [Require.js Docs](http://www.requirejs.org/docs/api.html#jsfiles)
+
+Last, but not least, you may be wondering what scripts need to be loaded to use SystemJS at all. Remember, I used Bower, so the path into the repo is a bit ugly. So here they are, just two lines with the configuration file:
+
+index.html
+{% highlight html %}
+<script data-main="js/index.js" src="lib/system.js/dist/system.src.js"></script>
+<script src="js/require-config.js"></script>
+{% highlight html %}
+
+Now we haven't dug much into the exciting parts of why ES6 modules will be so great, but I'll get to it in another blog post. Suffice to say, the `System.import()` syntax is the real deal from native moduling loading in ES6, and SystemJS even will include Traceur as a dependency and hot load it if you through an ES6 module into the mix so that you can use them today! 
+
+Check out SystemJS, and let me know if you have any questions.
+
+Find a better way I could have tackled this problem? Shoot me an email at andrew@brassington.io or leave a comment below:
