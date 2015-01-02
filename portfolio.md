@@ -6,7 +6,7 @@ tags:
 image:
   feature: brassington-teaching.jpg
 ---
-I've worked on a variety of projects, many of them closed source at Coder Camps, unfortunately. I've worked on personal websites, blogs, brochure sites, and small business sites. Most of them have either moved on or migrated to new sites. But here are some screenshots of the projects I've worked on most recently.
+I've worked on a variety of projects, many of them closed source unfortunately. I've worked on personal websites, blogs, brochure sites, and small business sites. Some of them have either moved on or migrated to new sites. But here are some screenshots of the projects I've worked on most recently.
 
 ## ProgrammingBootcamps.com
 
