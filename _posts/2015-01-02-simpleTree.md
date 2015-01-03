@@ -49,7 +49,7 @@ treeMaker.methods.contains = function(value) {
 Remember, with a tree the goal is for each node to have it's own children and the child nodes can also each have their own children, and so on and so forth. The DOM is really just a big instantiated tree structure.
 So here are the tests we can now successfully run to create our tree and search for a value. Obviously, each node can have many more properties than a single value, just as there are many properties on every DOM node.
 
-js/require-config.js:
+Using the implementation above:
 {% highlight javascript %}
 {% raw %}
 var tree = treeMaker();
