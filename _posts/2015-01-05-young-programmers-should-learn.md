@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What Most Young Programmers Need to Learn"
+title: "Young Programmers Need..."
 description: "Problem areas young programmers need to focus on."
 category: Young Programmers
 tags: [link post]
