@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Functors, Applicatives, And Monads In Pictures"
+title: "Monads In Pictures"
 description: "Understand functional concepts visually"
 category: Functional Programming
 tags: [code, link post]
