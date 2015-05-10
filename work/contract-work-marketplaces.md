@@ -22,4 +22,4 @@ I've started cold-emailing HackerNews companies via their monthly job posting th
 I'm hoping [Toptal](http://www.toptal.com/javascript) may be the answer. I expect to be screened thoroughly, and impressed that their application asks for much more detail than any of the others thus far. No other marketplace has even required a code sample.
 The list of Javascript engineers looks impressive, and I would love to find out what their how effective the community is for landing quality clients in the long run.
 
-I'm still searching for the perfect outlet for my voracious appitite to do worthwhile side-project work on paying contracts. What do you think, have you found a great community I've missed? Let me know in the comments or reach out to me at andrew@brassington.io
+I'm still searching for the perfect outlet for my voracious appitite to do worthwhile side-project work on paying contracts. What do you think, have you found a great community I've missed? Reach out to me at andrew@brassington.io
