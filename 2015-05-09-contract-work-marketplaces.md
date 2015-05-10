@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: 'Contract Marketplace Quest'
 description: 'How difficult is it to find a decent freelance marketplace?'
 category: Work
