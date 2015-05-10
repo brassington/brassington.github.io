@@ -10,14 +10,7 @@ comments: true
 share: true
 ---
 
-I've been on a quest for the last few weeks to find the best contract work marketplace. I've tried a laundry list of them:
-
- 1. Elance
- 2. Odesk/Upwork
- 3. Freelancer
- 4. Gun.io
- 5. Guru
- 6. Crew
+I've been on a quest for the last few weeks to find the best contract work marketplace. I've tried a laundry list of them: Elance, Odesk/Upwork, Freelancer, Gun.io, Guru, and Crew.
 
 I've bid on many, many projects, and only landed jobs so far where I've underbid my normal rates, usually by 50%. And most of the time, I don't even think my proposal gets read, let along considered.
 In order to stand out from the crowd, there is one hack that has helped me improve my response rate on these sites: record and submit a short video proposal, and in your proposal, post a link to it in the first sentence.
