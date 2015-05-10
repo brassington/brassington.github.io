@@ -11,6 +11,7 @@ share: true
 ---
 
 I've been on a quest for the last few weeks to find the best contract work marketplace. I've tried a laundry list of them:
+
  1. Elance
  2. Odesk/Upwork
  3. Freelancer
