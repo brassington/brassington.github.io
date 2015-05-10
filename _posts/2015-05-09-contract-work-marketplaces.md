@@ -3,7 +3,7 @@ layout: post
 title: 'Contract Marketplace Quest'
 description: 'How difficult is it to find a decent freelance marketplace?'
 category: Work
-tags: [Code]
+tags: [Contract Work, Clients, Marketplaces]
 image:
   feature: 
 comments: true
