@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /about/index.html
-title: Jacob Andrew Brassington
-tags: [Jacob, Andrew, Brassington, jabbrass, Resume]
+title: Andrew Brassington
+tags: [Andrew, Brassington, jabbrass, Resume]
 image:
   feature: brassington-teaching.jpg
 ---
@@ -18,8 +18,7 @@ I strive to be a quick learner and both a competent leader and capable worker. I
 
 ## Education
 
-Business Administration, B.S.  
-Fall 2006 - Spring 2013  
+Business Administration, B.S.    
 Andrews University, Berrien Springs, Michigan  
 
 ## Proficiency
