@@ -19,18 +19,18 @@ baseurl:          /jabbrass.github.io
 
 # Owner/author information
 owner:
-  name:           Jacob Andrew Brassington
-  avatar:         Jacob_Brassington.png
+  name:           Andrew Brassington
+  avatar:         Andrew_Brassington.png
   email:          jabbrass@zoho.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Jacob Andrew Brassington lives in the North Bay area, but works a software engineer in San Francisco, CA. &#xD <br /> Jacob loves to play the tuba, bake fresh pies, and visit with AirBnB guests from anywhere!
+  description:    Andrew Brassington lives in the North Bay area, but works a software engineer in San Francisco, CA. &#xD <br /> Jacob loves to play the tuba, bake fresh pies, and visit with AirBnB guests from anywhere!
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        jabbrass
   facebook:       
   github:         jabbrass
   stackexchange:  
-  linkedin:       jacobandrewbrassington
+  linkedin:       andrewbrassington
   instagram:      
   flickr:         
   tumblr:         
@@ -64,7 +64,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
 future:      true
-pygments:    true
+rouge:       true
 markdown:    kramdown
 paginate:    6
 paginate_path: "page:num"
