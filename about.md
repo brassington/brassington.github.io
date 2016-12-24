@@ -8,7 +8,6 @@ image:
 ---
  * <andrew@brassington.io>
  * <http://brassington.io>
- * 360-610-7048
 
 ## Background
 
