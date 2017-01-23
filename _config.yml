@@ -23,7 +23,7 @@ owner:
   avatar:         Andrew_Brassington.png
   email:          jabbrass@zoho.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Andrew Brassington lives in the North Bay area, but works a software engineer in San Francisco, CA. &#xD <br /> He loves to play the tuba, bake fresh pies, and visit with AirBnB guests from anywhere!
+  description:    Andrew Brassington lives in the North Bay area, but works a software engineer in San Francisco, CA. &#xD <br /> He loves to play the tuba, bake fresh pies, and visit with AirBnB guests from all over the globe!
   # Social networking links used in footer. Update and remove as you like.
   # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
   twitter:        machineloop
