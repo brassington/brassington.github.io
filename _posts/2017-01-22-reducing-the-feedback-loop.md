@@ -22,7 +22,7 @@ You'd be suprised how much the developer experience can improve with a tighter f
 
 All of this is thanks to the [Rust Language Server](http://www.jonathanturner.org/2017/01/rls-alpha-release.html), now in an Alpha release. I feel like I'm having more fun learning Rust because I know I can fix something as soon as I've typed it instead of switching contexts again five minutes later when I try to compile. This is an excellent improvement in tooling, and I'm really excited to see more languages adopt the language server protocols in the future. 
 
-<iframe src="//giphy.com/embed/iRUV9BthDnUIw" width="480" height="318" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="//giphy.com/embed/TUn7NE28BYY0w" width="480" height="318" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 Interested in checking this out for yourself? Go clone down the [rls_vscode](https://github.com/jonathandturner/rls_vscode) repo from github and install the rest of the Rust tooling referred to [here](http://www.jonathanturner.org/2017/01/rls-alpha-release.html).
 
