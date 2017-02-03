@@ -4,7 +4,7 @@ title: 'Time Travel in JS'
 description: 'Node.js with ChakraCore allows experimental step back function during code execution'
 category: Javascript
 tags: [Code]
-image: http://www.mattzeunert.com/img/blog/node-chakracore-time-travel/step-backwards.gif
+image: 'http://www.mattzeunert.com/img/blog/node-chakracore-time-travel/step-backwards.gif'
   feature: 
 comments: true
 share: false
