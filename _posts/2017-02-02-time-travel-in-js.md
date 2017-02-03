@@ -40,6 +40,8 @@ The optimizations are wherer things get interesting, they piggyback on the CLR G
 
 JS is also Garbage Collected, so I wondered if they used the same approach for the Node-ChakraCore version?
 
+Check out the work on the Chakra-Node version in this paper, worked on by [Barr, Marron, Maurer, Moseley and Seth](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/09/TTNode.pdf)
+
 I couldn't find a clear answer to that question, but it seems they used the eventloop to determine when to take snapshots of the environment, basically analyzing the queue and only taking snapshots when items are on the queue scheduled for execution. 
 
 Super cool stuff! Can't wait to use this in my day-to-day workflow, seems like a great tool to have once it's had more of its bugs shaken out!
