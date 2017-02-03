@@ -36,7 +36,7 @@ The original research was done by [Barr and Marron who build Tardis](https://www
 >interactions with environmental writes rendered
 >idempotent, to reach the target.
 
-The optimizations are wherer things get interesting, they piggyback on the CLR Garbage Collector process to store the Heap/Stack execution environment.
+The optimizations are where things get interesting, they piggyback on the CLR Garbage Collector process to store the Heap/Stack execution environment.
 
 JS is also Garbage Collected, so I wondered if they used the same approach for the Node-ChakraCore version?
 
