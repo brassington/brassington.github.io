@@ -23,15 +23,14 @@ The initial effort involved updating our version of Webpack to the latest suppor
 <img src="http://machineloop.github.io/assets/2017-performance-step.gif">
 
 We've continued to improve since brining us to about ~723KB total script tranferred when compressed, down from 1.5MB compressed when we started the effort. Yammer has used these techniques to cut our load times in half, your team can too! The rest on this blog post (and the conference talk) focuses on five of the techniques we used to help Yammer load faster: 
-  1. Preload and Prefetch to split and prioritize payloads
-  2. Add stable asset fingerprints and infinite cache headers to improve client-side caching
+  1. [Preload and Prefetch to split and prioritize payloads](#prefetch--preload)
+  2. [Add stable asset fingerprints and infinite cache headers to improve client-side caching](#add-stable-asset-fingerprints-and-infinite-cache-headers)
   3. Use dynamic import techniques and lazy module wrapping utilities
   4. Ramp up compression with Brotli and Zopfli
   5. Add fine-grained performance budgets in webpack to control output chunk sizes
   
 <br/>
 # Prefetch & Preload
-<br/>
 
 > `<preload>`  =  highest priority
 >
@@ -145,6 +144,68 @@ If you don't already have your data bootstrap calls in a separate chunk from the
 
 
 When you start using dynamic `import` extensively, it is also helpful to tell the browser about all the chunks, this is what `preload` is particularly useful for, you can provide a manifest in the initial HTML payload which informs the browser about all chunks you may need to load in the future. The Browser will then treat those links as lowest priority, and only download them (or never download them) based on it's own heuristics (usually involving network speed and availability).
+
+<br/>
+# Add stable asset fingerprints and infinite cache headers
+
+> `<script src= "…yam-chunk-manifest-be25201d76cbd0b4f9f5.js">`
+>
+> `Cache-Control: "public, max-age=31536000, immutable"`
+
+Webpack has had multiple regressions and implementation issues in getting chunk hashing stable, we're currently using one of the last verstions of Webpack v3, but the point releases mattered for us. If your application code has any strings generated at build time, you must be careful to make sure that the output stays the same across builds in order to get stable content hashes.
+
+There's an excellent article by [Andrey Okonetchnikov](https://codeburst.io/long-term-caching-of-static-assets-with-webpack-1ecb139adb95) walking through some of the difficulties of making sure content hashes stay stable. He's coauthored the latest version of the webpack documentation guilde covering caching, so it's also a great resourse to checkout: https://webpack.js.org/guides/caching/
+
+Adding the proper cache control `immutable` header along with a long `max-age` helps prevent unnecessary network calls to check if a resource has changed. When all assets are generated with stable asset fingerprints, the browser cache will never have to request an identical resource twice. Be careful here, and only limit the addition of this header to assets which contain proper content hashes in their resource names. You can end up preventing users from downloading the latest versions of image assets if you're not careful.
+
+<br/>
+# Use dynamic import techniques & lazy module wrapping
+
+> `import(/* chunkname */  ./component)`
+>
+> Wrap modules lazily
+
+We introduced dynamic `import` system wide on Yammer at the router level, this yielded a ~30% reduction in initial page load. 
+
+You can also use the natural import points between your components in your system to load code right before it's rendered. Try taking your legacy framework and it's lifecycle hooks to add a dynamic import wrapper to fetch the source code necessary for component render. It's also useful to implement a loading indicator for container components for better user experience.
+
+One common tool you can utilize for the React ecosystem is [`react-loadable`](https://www.github.com/jamiebuilds/react-loadable):
+
+```ts
+const LazyBroadcastHubMain = Loadable({
+  loader: () => import('./container’),
+  loading: () => <PageMainContentSpinner />,
+});
+export default LazyBroadcastHubMain;
+```
+
+Another approach you can use in React versions newer than [v16.6.0](https://reactjs.org/blog/2018/10/23/react-v-16-6.html) is to use `React.lazy` and Suspense APIs to create a similar convenience wrapper to handle async loading of code before mounting the React component:
+
+```ts
+import React, { lazy, ComponentType, PropsWithoutRef, Suspense } from 'react';
+
+export interface LazyComponentOptions<T> {
+  readonly loading?: ComponentType;
+  loader(): Promise<{ default: ComponentType<T> }>;
+}
+
+export default function lazyComponent<T>({
+  loader,
+  loading: Fallback,
+}: LazyComponentOptions<T>): ComponentType<PropsWithoutRef<T>> {
+  const LazyLoadedComponent = lazy(loader);
+
+  const fallback = Fallback ? <Fallback /> : null;
+
+  return (props: PropsWithoutRef<T>) => (
+    <Suspense fallback={fallback}>
+      <LazyLoadedComponent {...props} />
+    </Suspense>
+  );
+}
+```
+
+
 
 
 What do you think? Let me know in the comments or reach out to me at andrew.brassington@microsoft.com
