@@ -25,7 +25,7 @@ The initial effort involved updating our version of Webpack to the latest suppor
 We've continued to improve since brining us to about ~723KB total script tranferred when compressed, down from 1.5MB compressed when we started the effort. Yammer has used these techniques to cut our load times in half, your team can too! The rest on this blog post (and the conference talk) focuses on five of the techniques we used to help Yammer load faster: 
   1. [Preload and Prefetch to split and prioritize payloads](#prefetch--preload)
   2. [Add stable asset fingerprints and infinite cache headers to improve client-side caching](#add-stable-asset-fingerprints-and-infinite-cache-headers)
-  3. Use dynamic import techniques and lazy module wrapping utilities
+  3. [Use dynamic import techniques and lazy module wrapping utilities](#use-dynamic-import-techniques--lazy-module-wrapping)
   4. Ramp up compression with Brotli and Zopfli
   5. Add fine-grained performance budgets in webpack to control output chunk sizes
   
@@ -205,7 +205,11 @@ export default function lazyComponent<T>({
 }
 ```
 
+<br/>
+# Ramp up compression with Brotli and Zopfli
 
+<br/>
+# Add fine-grained performance budgets
 
 
 What do you think? Let me know in the comments or reach out to me at andrew.brassington@microsoft.com
