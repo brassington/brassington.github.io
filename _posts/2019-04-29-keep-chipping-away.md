@@ -220,6 +220,30 @@ Bottom line is that increased compression means fewer bytes sent across the wire
 
 <br/>
 # Add fine-grained performance budgets
+Webpack supports adding performance budgets which can warn or fail the build if exceeded. These are rought budgets which apply overall to the total size allowed for the largest asset. These are a useful place to start in a legacy application, can help prevent the largest of potential regressions. You might add something like this to your webpack config:
 
+```js
+performance: {
+  maxEntrypointSize: 50000, // 50KB
+  maxAssetSize: 50000, // 50KB
+  hints: 'error',
+}
+```
 
-What do you think? Let me know in the comments or reach out to me at andrew.brassington@microsoft.com
+A tool we've started to use at Yammer, developed by a colleague at Yammer is called [toobigrc](https://www.github.com/unindented/toobig
+) which doesn't require webpack at all, tests the declared budget sizes to the size of the files in a `dist/` directory. If you're not use webpack, just use the directory where you put the output files after your asset build. We have restrictions in place that look like this:
+
+```js
+{
+  "restrictions": {
+    "dist/asset-name.js": "100KB",
+    "dist/another-asset-name.js": "50KB",
+  }
+}
+```
+
+You can also test the size of the compressed assets by matching on `.js.br` or `.js.gz`. The above rules are only testing the size of the uncompressed assets.
+
+I hope you appreciated the overview of helpful tools to help optimize your legacy web application. Feel free to reach out with any further questions, my Twitter and Github handles are both [@machineloop](https://twitter.com/machineloop).
+
+No Github or Twitter account? Please let me know in the comments or reach out to me at andrew.brassington@microsoft.com
