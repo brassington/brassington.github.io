@@ -179,7 +179,7 @@ const LazyBroadcastHubMain = Loadable({
 export default LazyBroadcastHubMain;
 ```
 
-Another approach you can use in React versions newer than [v16.6.0](https://reactjs.org/blog/2018/10/23/react-v-16-6.html) is to use `React.lazy` and Suspense APIs to create a similar convenience wrapper to handle async loading of code before mounting the React component:
+Another approach you can use in React versions newer than [v16.6.0](https://reactjs.org/blog/2018/10/23/react-v-16-6.html) is to use `React.lazy` and Suspense APIs to create a similar convenience wrapper to handle async loading of code before mounting the React component.
 
 <script>
 const example = `ts
