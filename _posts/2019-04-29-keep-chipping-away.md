@@ -35,6 +35,40 @@ We've continued to improve since brining us to about ~723KB total script tranfer
 
 Take a look at [Addy Osmani's excellent blogpost on script priorities](https://addyosmani.com/blog/script-priorities/) shows how scripts are prioritized by Chrome, outside of a script tag in the head, the preload link tag is highest priority, while prefetch is lowest priority (the browser decides when to fetch, if at all):
 
+<style>
+.priorities-table {
+  color: #111;
+  font-size: 1em;
+}
+
+.priorities-table td {
+  border: 1px solid black;
+}
+
+.priorities-table .heading {
+  font-weight: bold;
+}
+
+.priorities-table .veryhigh {
+  background-color: #E0B9B1;
+}
+
+.priorities-table .high {
+  background-color: #EECDCD;
+}
+
+.priorities-table .medium {
+  background-color: #F3CCA2;
+}
+
+.priorities-table .low {
+  background-color: #D2E2F1;
+}
+
+.priorities-table .lowest {
+  background-color: #DBF2F1;
+}
+</style>
 <table class="priorities-table">
   <tbody><tr>
    <td>
