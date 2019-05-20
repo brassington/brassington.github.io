@@ -148,7 +148,7 @@ When you start using dynamic `import` extensively, it is also helpful to tell th
 <br/>
 # Add stable asset fingerprints and infinite cache headers
 
-> `<script src= "…yam-chunk-manifest-be25201d76cbd0b4f9f5.js">`
+> `<script src="./app-manifest-be25201d76cbd0b4f9f5.js">`
 >
 > `Cache-Control: "public, max-age=31536000, immutable"`
 
