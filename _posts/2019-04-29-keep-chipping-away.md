@@ -22,32 +22,87 @@ The initial effort involved updating our version of Webpack to the latest suppor
 
 <img src="https://im2.ezgif.com/tmp/ezgif-2-829b09c1d6e1.gif">
 
-Take a look at [Matt Zeunert's how-to post](http://www.mattzeunert.com/2016/12/22/vs-code-time-travel-debugging.html) to get this setup in your environment to try it out.
+We've continued to improve since brining us to about ~723KB total script tranferred when compressed, down from 1.5MB compressed when we started the effort. Yammer has used these techniques to cut our load times in half, your team can too! The rest on this blog post (and the conference talk) focuses on five of the techniques we used to help Yammer load faster: 
+  1. Preload and Prefetch to split and prioritize payloads
+  2. Add stable asset fingerprints and infinite cache headers to improve client-side caching
+  3. Use dynamic import techniques and lazy module wrapping utilities
+  4. Ramp up compression with Brotli and Zopfli
+  5. Add fine-grained performance budgets in webpack to control output chunk sizes
 
-I immediately asked the question, how is this working? My initial guess is that like the React and Clojure ecosystem, a data structure like a Trie might be involved in storing the differences in state of the world at every line of execution.
+> `<preload>`  =  highest priority
+>
+> `<prefetch>` =  lowest priority
 
-Seems that it's not quite so simple as a single data structre to manage and optimize the recorded state. Basically the approach uses a combination of recording snapshots of the execution state periodically, but also adding a logging mechanism to replay execurtions between snapshots.
+Take a look at [Addy Osmani's excellent blogpost on script priorities](https://addyosmani.com/blog/script-priorities/) shows how scripts are prioritized by Chrome, outside of a script tag in the head, the preload link tag is highest priority, while prefetch is lowest priority (the browser decides when to fetch, if at all):
 
-The original research was done by [Barr and Marron who build Tardis](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/04/TimeTravelDbg.pdf) (the name for the time travelling work) into the CLR for C#/.NET environments
+<table class="priorities-table">
+  <tbody><tr>
+   <td>
+   </td>
+   <td><strong>Loading priority<br>
+(network/Blink)</strong>
+   </td>
+   <td><strong>Execution priority</strong>
+   </td>
+   <td><strong>Where should this be used?</strong>
+   </td>
+  </tr>
+  
+  <tr>
+   <td class="heading"><code>&lt;link rel=preload&gt;</code> +<br>
+<code>&lt;script async&gt;</code> hack
+<p>
+or 
+</p><p>
+<code>&lt;script type=module async&gt;</code>
+   </p></td>
+   <td class="medium">Medium/High
+   </td>
+   <td class="high">High -<br>
+Interrupts parser
+   </td>
+   <td><ul>
 
->A standard approach for implementing a TTD system is
->to take snapshots of a program’s state at regular intervals
->and record all non-deterministic environmental interactions,
->such as console I/O or timer events, that occur between snapshots.
->Under this scheme, reverse execution first restores the
->nearest snapshot that precedes a reverse execution target,
->then re-executes forward from that snapshot, replaying environmental
->interactions with environmental writes rendered
->idempotent, to reach the target.
+<li>Scripts that generate critical content (needed for FMP) 
+<ul>
+ <li>But shouldn't affect above-the-fold layout of the page
+</li><li>Scripts that trigger network fetches of dynamically inserted content
+</li><li>Scripts that need to execute as soon as their imports are fetched, use <code>&lt;script async type=module&gt;</code>
 
-The optimizations are where things get interesting, they piggyback on the CLR Garbage Collector process to store the Heap/Stack execution environment.
+<p>&nbsp;</p>
+<strong>Examples:</strong><ul>
 
-JS is also Garbage Collected, so I wondered if they used the same approach for the Node-ChakraCore version?
+<li>Draw something on <code>&lt;canvas&gt;</code></li></ul>
+</li></ul>
 
-Check out the work on the Chakra-Node version in this paper, worked on by [Barr, Marron, Maurer, Moseley and Seth](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/09/TTNode.pdf)
+</li></ul>
 
-I couldn't find a clear answer to that question, but it seems they used the eventloop to determine when to take snapshots of the environment, basically analyzing the queue and only taking snapshots when items are on the queue scheduled for execution. 
+   </td>
+  </tr>
+  
+  
+  
+  
+  <tr>
+   <td><code>&lt;link rel=prefetch&gt;</code> + <code>&lt;script&gt;</code> in a next-page navigation
+   </td>
+   <td class="lowest">Idle / Lowest
+   </td>
+   <td class="medium">Depends on  when and how the script is consumed.
+   </td>
+   <td>Scripts very likely to provide important functionality to a next-page navigation.
+<p>&nbsp;</p>
+<strong>Examples:</strong><ul>
 
-Super cool stuff! Can't wait to use this in my day-to-day workflow, seems like a great tool to have once it's had more of its bugs shaken out!
+<li>JavaScript bundle for a future route</li></ul>
+
+   </td>
+  </tr>
+</tbody></table>
+
+If you don't already have your data bootstrap calls in a separate chunk from the rest of your application code, you can stratigically introduce a new code split point by adding a dynamic `import` where you call your bootstrap process. We used a `promise.all()` to start the bootstrap process, fetching initial user and network data, while loading the rest of the application code needed to display the bootstrapped service results.
+
+When you start using dynamic `import` extensively, it is also helpful to tell the browser about all the chunks, this is what `preload` is particularly useful for, you can provide a manifest in the initial HTML payload which informs the browser about all chunks you may need to load in the future. The Browser will then treat those links as lowest priority, and only download them (or never download them) based on it's own heuristics (usually involving network speed and availability).
+
 
 What do you think? Let me know in the comments or reach out to me at andrew.brassington@microsoft.com
