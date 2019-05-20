@@ -26,8 +26,8 @@ We've continued to improve since brining us to about ~723KB total script tranfer
   1. [Preload and Prefetch to split and prioritize payloads](#prefetch--preload)
   2. [Add stable asset fingerprints and infinite cache headers to improve client-side caching](#add-stable-asset-fingerprints-and-infinite-cache-headers)
   3. [Use dynamic import techniques and lazy module wrapping utilities](#use-dynamic-import-techniques--lazy-module-wrapping)
-  4. Ramp up compression with Brotli and Zopfli
-  5. Add fine-grained performance budgets in webpack to control output chunk sizes
+  4. [Ramp up compression with Brotli and Zopfli](#ramp-up-compression-with-brotli-and-zopfli)
+  5. [Add fine-grained performance budgets to control output chunk sizes](#add-fine-grained-performance-budgets)
   
 <br/>
 # Prefetch & Preload
@@ -207,6 +207,16 @@ export default function lazyComponent<T>({
 
 <br/>
 # Ramp up compression with Brotli and Zopfli
+
+> Zopfli: very good, but slow, gzip compatible
+>
+> Brotli: new LZ77 algorithm, modern browser support (IE11)
+
+Zopfli is a "very good, but slow, deflate or zlib compression" ([google/zopfli](https://github.com/google/zopfli)). This means it's compatible with exisiting browser gzip deflate algorithms, making it compatible without any browser changes needed. But because it takes longer to compress, you shouldn't attempt to use Zopfli at runtime to compress, you must compress in advance. We chose to use Zopfli to compress all our static assets each time we build the assets. This means increasing build times, but less data transferred across the wire for each asset, and it's more effective the larger the individual assets are. We saw upwards of ~5% and upward of ~10% size reductions on larger assets, event for legacy browsers.
+
+Brotli is a brand new compression algorithm originally used for fonts but made available for all textual formats. All modern browsers (not IE11) support Brotli, you can see another ~5% to ~20% reduction on your assets when compared to default Gzip compression settings. See Google's original announcement blog post from 2015 for a great introduction: https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html
+
+Bottom line is that increased compression means fewer bytes sent across the wire on initial page load. Legacy applications are particularly great candidates for additional compression if the assets are large and haven't been code-split yet.
 
 <br/>
 # Add fine-grained performance budgets
