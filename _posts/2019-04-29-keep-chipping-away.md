@@ -20,7 +20,7 @@ There are many improvements which have contributed to these improvements, includ
 
 The initial effort involved updating our version of Webpack to the latest supporting dynamic `import`. Converting all our routes to use dynamic `import` immediately cut ~30% off our 5.55MB total script payload, bringing us down to 3.9MB total. As you can see in the following Gif, this had an immediate effect on reducing feed load times to around 6 seconds.
 
-<img src="https://im2.ezgif.com/tmp/ezgif-2-829b09c1d6e1.gif">
+<img src="http://machineloop.github.io/assets/2017-performance-step.gif">
 
 We've continued to improve since brining us to about ~723KB total script tranferred when compressed, down from 1.5MB compressed when we started the effort. Yammer has used these techniques to cut our load times in half, your team can too! The rest on this blog post (and the conference talk) focuses on five of the techniques we used to help Yammer load faster: 
   1. Preload and Prefetch to split and prioritize payloads
@@ -28,6 +28,10 @@ We've continued to improve since brining us to about ~723KB total script tranfer
   3. Use dynamic import techniques and lazy module wrapping utilities
   4. Ramp up compression with Brotli and Zopfli
   5. Add fine-grained performance budgets in webpack to control output chunk sizes
+  
+<br/>
+# Prefetch & Preload
+<br/>
 
 > `<preload>`  =  highest priority
 >
@@ -134,7 +138,11 @@ Interrupts parser
   </tr>
 </tbody></table>
 
+<br/>
+<br/>
+
 If you don't already have your data bootstrap calls in a separate chunk from the rest of your application code, you can stratigically introduce a new code split point by adding a dynamic `import` where you call your bootstrap process. We used a `promise.all()` to start the bootstrap process, fetching initial user and network data, while loading the rest of the application code needed to display the bootstrapped service results.
+
 
 When you start using dynamic `import` extensively, it is also helpful to tell the browser about all the chunks, this is what `preload` is particularly useful for, you can provide a manifest in the initial HTML payload which informs the browser about all chunks you may need to load in the future. The Browser will then treat those links as lowest priority, and only download them (or never download them) based on it's own heuristics (usually involving network speed and availability).
 
